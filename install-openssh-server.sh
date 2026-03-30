@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #Petit script pour installer facilement openssh-server dans le container docker après que Holy Claude ait démarré
 #ATTENTION: ne support pas l'arrêt du container, donc il faudra le lancer chaque fois que l'on a besoin d'une connexion ssh avec le container !
-#zf260330.1221
+#zf260330.1228
 
 # source: 
 
@@ -29,7 +29,7 @@ ssh claude@localhost -p 2222
 
 ou copier sa clef ssh dans le container
 
-scp -P 2222 -r /root/.ssh/ claude@localhost:/home/claude/
+./copy-ssh-key.sh
 
 après l'avoir générée avec:
 
