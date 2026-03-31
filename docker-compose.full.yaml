@@ -31,8 +31,8 @@ services:
       - ./workspace:/workspace
     environment:
 
-      - ANTHROPIC_AUTH_TOKEN=ollama
-      - ANTHROPIC_BASE_URL=http://192.168.0.247:11434        # mon iMAC
+#      - ANTHROPIC_AUTH_TOKEN=ollama
+#      - ANTHROPIC_BASE_URL=http://192.168.0.247:11434        # mon iMAC
 #      - ANTHROPIC_BASE_URL=http://192.168.0.45:11434          # l'ordi gpu3
 
       # --- Required ---
