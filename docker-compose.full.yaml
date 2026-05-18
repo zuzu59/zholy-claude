@@ -12,6 +12,7 @@ services:
     restart: unless-stopped
     shm_size: 2g
     network_mode: bridge
+    user: "root"
     cap_add:
       - SYS_ADMIN
       - SYS_PTRACE
@@ -29,14 +30,15 @@ services:
     volumes:
       - ./data/claude:/home/claude/.claude
       - ./workspace:/workspace
+      # Partage des clés SSH :
+      - ./data/claude/.ssh:/home/claude/.ssh
     environment:
-
-#      - ANTHROPIC_AUTH_TOKEN=ollama
-#      - ANTHROPIC_BASE_URL=http://192.168.0.247:11434        # mon iMAC
+      - ANTHROPIC_AUTH_TOKEN=ollama
+      - ANTHROPIC_BASE_URL=http://192.168.0.247:11434        # mon iMAC
 #      - ANTHROPIC_BASE_URL=http://192.168.0.45:11434          # l'ordi gpu3
 
       # --- Required ---
-      - TZ=CET                                    # Your timezone (e.g., America/New_York)
+      - TZ=Europe/Zurich                                    # Your timezone (e.g., America/New_York)
 
       # --- Performance ---
       - NODE_OPTIONS=--max-old-space-size=4096     # Node.js memory limit (MB)

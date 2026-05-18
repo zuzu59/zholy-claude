@@ -12,6 +12,7 @@ Installation de Holy Claude...
 
 mkdir workspace
 chown 1000:1000 workspace
+cp ./set-tz.sh workspace
 
 echo -e "
 
